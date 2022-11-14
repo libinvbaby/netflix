@@ -17,7 +17,8 @@ function PoplarMovie() {
 
 
   return (
-   <div className="container">
+   <div className="container py-5">
+    <h3 className="text-white text-center">Poplar Movies</h3>
     <div className="row">
     {movie.map((item)=>{
           

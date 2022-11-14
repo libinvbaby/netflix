@@ -16,7 +16,8 @@ useEffect(() => {
   console.log(upcoming[1])
   
   return (
-    <div className="Container">
+    <div className="Container pt-5">
+      <h3 className="text-white">Upcoming Movies</h3>
         <div className="posters">
         {upcoming.map((obj)=>
 <div>

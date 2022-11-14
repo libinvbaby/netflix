@@ -8,6 +8,7 @@ function Home() {
   return (
     <div className='container-fluid'>
      <div>
+
       <SliderNew /> 
       <RawPost url={orginals} title="Netflix Orginals" />
       <RawPost url={action} title="Action" isSmall />

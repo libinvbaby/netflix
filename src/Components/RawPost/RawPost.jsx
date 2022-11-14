@@ -8,6 +8,7 @@ import Youtube from 'react-youtube'
 
 function RawPost(props) {
   const [movie, setMovies] = useState([])
+  
   const[urlId,setUrlId] = useState('')
   useEffect(() => {
     axios.get(props.url).then((response) => {
@@ -18,6 +19,7 @@ function RawPost(props) {
     })
   
   }, [])
+
   const opts = {
     height: '390',
     width: '100%',
@@ -40,18 +42,33 @@ function RawPost(props) {
   
 
   return (
+    <div className="container-fluid">
+
     <div className="row">
-        <h2 className='title_post'>{props.title}</h2>
+        <h2 className='title_post'>{props.title}
+        </h2>
         <div className="posters">
-
+       
+          
           {movie.map((obj)=>
-                        <img onClick={()=>handleMovieTralier(obj.id)} className={props.isSmall?"isSmall":"large"} src={`${imageUrl+obj.backdrop_path}`} alt="movie" />
-
-          )}
-           
+<div>
+                        <img onClick={()=>handleMovieTralier(obj.id)} className={props.isSmall?"isSmall":"large"} src={`${imageUrl+obj.backdrop_path}`} alt="movie"  />
+                          <p className="text-center text-white hvr"><b>{obj.original_name}</b></p>
+                          </div>
+          )}  
+          
+          
+         
         </div>
+      
+          
+       
+        
        {urlId && <Youtube opts={opts} videoId={urlId.key}  />}
+       
     </div>
+    </div>
+
   )
 }
 

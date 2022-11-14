@@ -6,13 +6,14 @@ import { API_KEY,imageUrl } from '../../constants/constants'
 import axios from '../../axios'
 import {useState, useEffect} from 'react'
 import './Slider.css'
-import Container from 'react-bootstrap/Container';
+
 
 
 function SliderNew() {
     var settings = {
         dots: true,
-        fade: true,        
+        fade: true,    
+        nav:false,    
         infinite: true,
         speed: 300,
         slidesToShow: 1,
@@ -47,7 +48,7 @@ function SliderNew() {
              
             }, [])
   return (
-    <Container>
+    <div className="container-fluid">
     <Slider {...settings}>
     <div>
     <div style={{backgroundImage:`url(${movie ? imageUrl+movie.backdrop_path: ''})`}} className="banner">
@@ -94,7 +95,7 @@ function SliderNew() {
     
     
   </Slider>
-  </Container>
+  </div>
   )
 }
 

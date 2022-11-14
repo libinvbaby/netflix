@@ -14,7 +14,7 @@
     display:none;
 }
 .large{
-    max-height: 250px;
+    max-height: 200px;
     margin-right:10px;
     cursor:pointer;
 
@@ -23,7 +23,6 @@
 .title_post{
     color:#fff;
     padding:10px;
-    margin-left: 20px ;
 }
 .isSmall{
     max-height:150px;    
@@ -36,4 +35,13 @@ cursor:pointer;
 }
 .isSmall:hover{
     transform: scale(1.2)
+}
+.titlename{
+    color:#fff;
+    
+}
+.hvr{
+   position: relative;
+   top:-50px;
+   
 }

@@ -1,12 +1,29 @@
-import React from 'react'
+import React from 'react';
+import Toprated from '../../pages/Toprated';
+import Popular from '../../pages/Popular';
+import Home from '../../pages/Home';
 import './Header.css'
+import {BrowserRouter as Router, Route,Routes, Link} from 'react-router-dom'
+import Upcoming from '../../pages/Upcoming';
+
 
 function Header() {
   return (
-    <div className='navbar'>
-        <img className='logo' src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1920px-Netflix_2015_logo.svg.png" alt="neflix logo" />
-        <img className='avatar' src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png?20201013161117" alt="avatar logo" />
+    <div className="navbar-new">
+    <Router>
+      <Link className="navbar-link" exact from="/"  to="/"><img className="logo" width="100" src="https://image.tmdb.org/t/p/original/wwemzKWzjKYJFfCeiB57q3r4Bcm.png" alt="" /></Link>
+      <Link className="navbar-link" to='/toprated' >Top Rated </Link>
+      <Link className="navbar-link" to='/popular'>Popular Movies</Link>
+      <Link className="navbar-link" to='upcoming'>Upcoming Movies</Link>
+      <Routes>
+        <Route element={<Toprated/>} path='/toprated' />
+        <Route element={<Popular/>} path='/popular' />
+        <Route element={<Upcoming/>} path='/upcoming' />
+        <Route element={<Home/>} path='/' />
+      </Routes>
+    </Router>
     </div>
+    
   )
 }
 
